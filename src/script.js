@@ -123,7 +123,7 @@ function animate()
     {
         // Change sprite to draw
         spriteIdx ++;
-        spriteIdx = spriteIdx % SPRITE_LENGTH;
+        spriteIdx = spriteIdx % animationsSprites[currStateName].loc.length;
     }
 
     // Requesrt animation, it invokes this method at every frame
