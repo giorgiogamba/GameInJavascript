@@ -49,7 +49,7 @@ const animations =
     },
     {
         name: "SIT",
-        frames: 7,
+        frames: 5,
     },
     {
         name: "ROLL",
