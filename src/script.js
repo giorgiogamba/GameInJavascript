@@ -3,6 +3,14 @@
 const canvas = document.getElementById('canvas');
 const context = canvas.getContext('2d');
 
+const animationsComboBox = document.getElementById("animations");
+animationsComboBox.addEventListener("change", function(e)
+{
+    currStateName = e.target.value;
+    spriteIdx = 0;
+    gameFrame = 0;
+});
+
 // Global constants declaration
 const CANVAS_WIDTH = canvas.width = 600;
 const CANVAS_HEIGHT = canvas.height = 600;
