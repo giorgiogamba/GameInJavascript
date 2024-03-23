@@ -1,8 +1,17 @@
+// Import constants
+import {CANVAS_WIDTH, CANVAS_HEIGHT, SPRITE_WIDTH, SPRITE_HEIGHT, SAME_SPRITE_FRAMES} from './config.js';
+
+// Import assets information
+import {playerAssetPath} from "./config.js";
+
+// Import animations information
+import {animations} from "./config.js";
 
 // Setup canvas
 const canvas = document.getElementById('canvas');
 const context = canvas.getContext('2d');
 
+// Add animations combo box
 const animationsComboBox = document.getElementById("animations");
 animationsComboBox.addEventListener("change", function(e)
 {
@@ -11,64 +20,7 @@ animationsComboBox.addEventListener("change", function(e)
     gameFrame = 0;
 });
 
-// Global constants declaration
-const CANVAS_WIDTH = canvas.width = 600;
-const CANVAS_HEIGHT = canvas.height = 600;
-
-const SPRITE_WIDTH = 575;
-const SPRITE_HEIGHT = 523;
-const SPRITE_LENGTH = 7;
-
-const SAME_SPRITE_FRAMES = 5; // Number of frames where to render the same sprite as before
-
 // Sprites animations intialization
-
-// Define a json map that defines the possible animations with the number of frames required
-// to display them and their position inside the assete
-const animations =
-[
-    {
-        name: "IDLE",
-        frames: 7,
-    },
-    {
-        name: "JUMP",
-        frames: 7,
-    },
-    {
-        name: "FALL",
-        frames: 7,
-    },
-    {
-        name: "RUN",
-        frames: 9,
-    },
-    {
-        name: "DIZZY",
-        frames: 11,
-    },
-    {
-        name: "SIT",
-        frames: 5,
-    },
-    {
-        name: "ROLL",
-        frames: 7,
-    },
-    {
-        name: "BITE",
-        frames: 7,
-    },
-    {
-        name: "KO",
-        frames: 12,
-    },
-    {
-        name: "HIT",
-        frames: 4,
-    },
-];
-
 const animationsSprites = [];
 
 animations.forEach((state, stateIdx) =>
@@ -94,7 +46,7 @@ let currStateName = "IDLE";
 
 // Sprite asset
 const playerImage = new Image();
-playerImage.src = '../assets/shadow_dog.png';
+playerImage.src = playerAssetPath;
 
 function animate()
 {
