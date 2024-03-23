@@ -93,7 +93,7 @@ console.log(animationsSprites);
 
 let gameFrame = 0; // Iterates from 0 to 5
 let spriteIdx = 0; // Keeps track of the row of the sprite table to draw
-let currStateName = "DIZZY";
+let currStateName = "IDLE";
 
 // Sprite asset
 const playerImage = new Image();
