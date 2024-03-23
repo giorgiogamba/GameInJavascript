@@ -9,7 +9,17 @@ export const SPRITE_HEIGHT = 523;
 
 export const SAME_SPRITE_FRAMES = 5; // Number of frames where to render the same sprite as before
 
-// PLAYER ASSET
+// BACKGROUND
+export const BACKGROUND_CANVAS_WIDTH = background.width = 800;
+export const BACKGROUND_CANVAS_HEIGHT = background.height = 600;
+
+export const backgroundLayerPath1 = "../assets/background/layer-1.png";
+export const backgroundLayerPath2 = "../assets/background/layer-2.png";
+export const backgroundLayerPath3 = "../assets/background/layer-3.png";
+export const backgroundLayerPath4 = "../assets/background/layer-4.png";
+export const backgroundLayerPath5 = "../assets/background/layer-5.png";
+
+// PLAYER
 export const playerAssetPath = '../assets/shadow_dog.png';
 
 // ANIMATIONS
