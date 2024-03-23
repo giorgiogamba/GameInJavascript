@@ -13,8 +13,79 @@ const SPRITE_LENGTH = 7;
 
 const SAME_SPRITE_FRAMES = 5; // Number of frames where to render the same sprite as before
 
+// Sprites animations intialization
+
+// Define a json map that defines the possible animations with the number of frames required
+// to display them and their position inside the assete
+const animations =
+[
+    {
+        name: "IDLE",
+        frames: 7,
+    },
+    {
+        name: "JUMP",
+        frames: 7,
+    },
+    {
+        name: "FALL",
+        frames: 7,
+    },
+    {
+        name: "RUN",
+        frames: 9,
+    },
+    {
+        name: "DIZZY",
+        frames: 11,
+    },
+    {
+        name: "SIT",
+        frames: 7,
+    },
+    {
+        name: "ROLL",
+        frames: 7,
+    },
+    {
+        name: "BITE",
+        frames: 7,
+    },
+    {
+        name: "KO",
+        frames: 12,
+    },
+    {
+        name: "HIT",
+        frames: 4,
+    },
+];
+
+const animationsSprites = [];
+
+animations.forEach((state, stateIdx) =>
+{
+    // Contains the coordinates inside the sprite asset of the animations states
+    let animationStates = { loc: [] };
+
+    for (let j = 0; j < state.frames; j ++)     // For each animation state
+    {
+        let posX = j * SPRITE_WIDTH;            // Get the col position
+        let posY = stateIdx * SPRITE_HEIGHT;    // Get the row position
+        animationStates.loc.push({posX, posY});
+    }
+
+    // Associates the state name with its frames coordinates
+    animationsSprites[state.name] = animationStates;
+
+});
+
+console.log(animationsSprites);
+
+
 let gameFrame = 0; // Iterates from 0 to 5
 let spriteIdx = 0; // Keeps track of the row of the sprite table to draw
+let currStateName = "DIZZY";
 
 // Sprite asset
 const playerImage = new Image();
@@ -26,14 +97,14 @@ function animate()
     context.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
 
     // Draws on the canvas
-    context.drawImage( playerImage                  // From this source
-                     , spriteIdx * SPRITE_WIDTH     // Crops starting from the upper left
-                     , 0
-                     , SPRITE_WIDTH                 // Crops with this dimension
+    context.drawImage( playerImage                                              // From this source
+                     , animationsSprites[currStateName].loc[spriteIdx].posX     // Crops starting from the upper left
+                     , animationsSprites[currStateName].loc[spriteIdx].posY
+                     , SPRITE_WIDTH                                             // Crops with this dimension
                      , SPRITE_HEIGHT
-                     , 0                            // Starts drawing from upper left of the canvas
+                     , 0                                                        // Starts drawing from upper left of the canvas
                      , 0
-                     , CANVAS_WIDTH                 // Stretches the cropped sprite in this size
+                     , CANVAS_WIDTH                                             // Stretches the cropped sprite in this size
                      , CANVAS_HEIGHT );
 
     // Handles the sprite to draw at the next frame
