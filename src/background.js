@@ -51,27 +51,17 @@ class BGLayer
 
 }
 
-function createLayer(imagePath, speedModifier)
-{
-    const backgroundLayerImage = new Image();
-    backgroundLayerImage.src = imagePath;
-    return new BGLayer(backgroundLayerImage, speedModifier);
-}
-
-const layer1 = createLayer(backgroundLayerPath1, 0.2);
-const layer2 = createLayer(backgroundLayerPath2, 0.4);
-const layer3 = createLayer(backgroundLayerPath3, 0.6);
-const layer4 = createLayer(backgroundLayerPath4, 0.8);
-const layer5 = createLayer(backgroundLayerPath5, 1.0);
-
-const layers = [layer1, layer2, layer3, layer4, layer5];
 
 function animateBackground()
 {
     backgroundContext.clearRect(0, 0, BACKGROUND_CANVAS_WIDTH, BACKGROUND_CANVAS_HEIGHT);
 
-    // Draws on the canvas
-    backgroundContext.drawImage(backgroundLayer1, 0, 0);
+    layers.forEach(obj =>
+    {
+        obj.update();
+        obj.draw();
+    });
+
     requestAnimationFrame(animateBackground);
 }
 
