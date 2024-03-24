@@ -4,18 +4,7 @@ import { backgroundLayerPath1, backgroundLayerPath2, backgroundLayerPath3, backg
 const background = document.getElementById("background");
 const backgroundContext = background.getContext("2d");
 
-let gameSpeed = 5;
-
-const backgroundLayer1 = new Image();
-backgroundLayer1.src = backgroundLayerPath1;
-const backgroundLayer2 = new Image();
-backgroundLayer2.src = backgroundLayerPath2;
-const backgroundLayer3 = new Image();
-backgroundLayer3.src = backgroundLayerPath3;
-const backgroundLayer4 = new Image();
-backgroundLayer4.src = backgroundLayerPath4;
-const backgroundLayer5 = new Image();
-backgroundLayer5.src = backgroundLayerPath5;
+let gameSpeed = 15;
 
 function animateBackground()
 {
