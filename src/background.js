@@ -6,6 +6,52 @@ const backgroundContext = background.getContext("2d");
 
 let gameSpeed = 15;
 
+class BGLayer
+{
+    constructor(image, speedModifier)
+    {
+        this.image = image;
+        this.speedModifier = speedModifier;
+
+        // Size of the image
+        this.width = BACKGROUND_IMAGE_WIDTH;
+        this.height = BACKGROUND_IMAGE_HEIGHT;
+
+        // Position of the first instance of the image
+        this.x1 = 0;
+        this.y1 = 0;
+
+        // Position of the second instance of the image
+        this.x2 = this.width;
+
+        this.speed = gameSpeed * speedModifier;
+    }
+
+    update()
+    {
+        this.speed = gameSpeed * this.speedModifier;
+        if (this.x1 < - this.width)
+        {
+            this.x1 = this.width + this.x2 - this.speed;
+        }
+        if (this.x2 < - this.width)
+        {
+            this.x2 = this.width + this.x1 - this.speed;
+        }
+
+        this.x1 = Math.floor(this.x1 - this.speed);
+        this.x2 = Math.floor(this.x2 - this.speed);
+    }
+
+    draw()
+    {
+        backgroundContext.drawImage(this.image, this.x1, this.y1, this.width, this.height);
+        backgroundContext.drawImage(this.image, this.x2, this.y1, this.width, this.height);
+    }
+
+}
+
+
 function animateBackground()
 {
     backgroundContext.clearRect(0, 0, BACKGROUND_CANVAS_WIDTH, BACKGROUND_CANVAS_HEIGHT);
