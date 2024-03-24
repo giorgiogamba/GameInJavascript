@@ -1,4 +1,4 @@
-import { BACKGROUND_CANVAS_HEIGHT, BACKGROUND_CANVAS_WIDTH} from "./config.js";
+import { BACKGROUND_CANVAS_HEIGHT, BACKGROUND_CANVAS_WIDTH, BACKGROUND_IMAGE_HEIGHT, BACKGROUND_IMAGE_WIDTH} from "./config.js";
 import { backgroundLayerPath1, backgroundLayerPath2, backgroundLayerPath3, backgroundLayerPath4, backgroundLayerPath5 } from "./config.js";
 
 const background = document.getElementById("background");
