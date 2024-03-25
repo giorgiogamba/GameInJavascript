@@ -5,6 +5,7 @@ const background = document.getElementById("background");
 const backgroundContext = background.getContext("2d");
 
 let gameSpeed = 15;
+let gameFrame = 0;
 
 class BGLayer
 {
@@ -18,11 +19,8 @@ class BGLayer
         this.height = BACKGROUND_IMAGE_HEIGHT;
 
         // Position of the first instance of the image
-        this.x1 = 0;
-        this.y1 = 0;
-
-        // Position of the second instance of the image
-        this.x2 = this.width;
+        this.x = 0;
+        this.y = 0;
 
         this.speed = gameSpeed * speedModifier;
     }
@@ -30,23 +28,18 @@ class BGLayer
     update()
     {
         this.speed = gameSpeed * this.speedModifier;
-        if (this.x1 < - this.width)
+        if (this.x < - this.width)
         {
-            this.x1 = this.width + this.x2 - this.speed;
-        }
-        if (this.x2 < - this.width)
-        {
-            this.x2 = this.width + this.x1 - this.speed;
+            this.x = 0;
         }
 
-        this.x1 = Math.floor(this.x1 - this.speed);
-        this.x2 = Math.floor(this.x2 - this.speed);
+        this.x = gameFrame * gameSpeed % this.width;
     }
 
     draw()
     {
-        backgroundContext.drawImage(this.image, this.x1, this.y1, this.width, this.height);
-        backgroundContext.drawImage(this.image, this.x2, this.y1, this.width, this.height);
+        backgroundContext.drawImage(this.image, this.x, this.y, this.width, this.height);
+        backgroundContext.drawImage(this.image, this.x + this.width, this.y, this.width, this.height);
     }
 
 }
@@ -82,6 +75,8 @@ const layers = [layer1, layer2, layer3, layer4, layer5];
 function animateBackground()
 {
     backgroundContext.clearRect(0, 0, BACKGROUND_CANVAS_WIDTH, BACKGROUND_CANVAS_HEIGHT);
+
+    gameFrame --;
 
     layers.forEach(obj =>
     {
