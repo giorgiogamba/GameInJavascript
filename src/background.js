@@ -58,6 +58,19 @@ function createLayer(imagePath, speedModifier)
     return new BGLayer(backgroundLayerImage, speedModifier);
 }
 
+// Background debug
+
+const gameSpeedLabel = document.getElementById("gameSpeedLabel");
+gameSpeedLabel.innerHTML = gameSpeed;
+
+const gameSpeedSlider = document.getElementById("gameSpeedSlider");
+gameSpeedSlider.value = gameSpeed;
+gameSpeedSlider.addEventListener("change", function(e)
+{
+    gameSpeed = e.target.value;             // Updates game speed value
+    gameSpeedLabel.innerHTML = gameSpeed;   // Updates game speed label content
+});
+
 const layer1 = createLayer(backgroundLayerPath1, 0.2);
 const layer2 = createLayer(backgroundLayerPath2, 0.4);
 const layer3 = createLayer(backgroundLayerPath3, 0.6);

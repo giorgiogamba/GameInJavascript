@@ -17,7 +17,11 @@
 
     <h1>Game in Javascript mock body</h1>
 
-    <canvas id="background"></canvas>
+    <div id="bgContainer">
+        <canvas id="background"></canvas>
+        <p>Game Speed: <span id="gameSpeedLabel"></span></p>
+        <input type="range" min="0" max="20", value="5" class="slider" id="gameSpeedSlider">
+    </div>
 
     <canvas id="canvas"></canvas>
     <div class="controls">
@@ -35,7 +39,6 @@
             <option value="HIT">Hit</option>
         </select>
     </div>
-
 
     <script type="module" src="script.js"></script>
     <script type="module" src="background.js"></script>
