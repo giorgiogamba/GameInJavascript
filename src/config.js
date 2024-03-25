@@ -25,6 +25,14 @@ export const backgroundLayerPath5 = "../assets/background/layer-5.png";
 // PLAYER
 export const playerAssetPath = '../assets/shadow_dog.png';
 
+// ENEMIES
+export const ENEMY_WIDTH = 20;
+export const ENEMY_HEIGHT = 20;
+export const ENEMY_CANVAS_WIDTH = 800;
+export const ENEMY_CANVAS_HEIGTH = 600;
+export const NUM_ENEMIES = 10;
+export const ENEMY_SPEED = 5;
+
 // ANIMATIONS
 // Define a json map that defines the possible animations with the number of frames required
 // to display them and their position inside the assete
