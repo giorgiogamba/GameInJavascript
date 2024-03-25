@@ -11,7 +11,7 @@ export const SAME_SPRITE_FRAMES = 5; // Number of frames where to render the sam
 
 // BACKGROUND
 export const BACKGROUND_CANVAS_WIDTH = background.width = 800;
-export const BACKGROUND_CANVAS_HEIGHT = background.height = 600;
+export const BACKGROUND_CANVAS_HEIGHT = background.height = 700;
 
 export const BACKGROUND_IMAGE_WIDTH = 2400;
 export const BACKGROUND_IMAGE_HEIGHT = 700;
