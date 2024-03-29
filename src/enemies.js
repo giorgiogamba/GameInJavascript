@@ -4,6 +4,9 @@ import { CANVAS_HEIGHT, CANVAS_WIDTH, ENEMY_CANVAS_HEIGTH, ENEMY_CANVAS_WIDTH, E
 const enemiesCanvas = document.getElementById("enemiesCanvas");
 const enemiesContext = enemiesCanvas.getContext("2d");
 
+enemiesCanvas.width = ENEMY_CANVAS_WIDTH;
+enemiesCanvas.height = ENEMY_CANVAS_HEIGTH;
+
 let gameFrame = 0;
 
 class Enemy
@@ -12,8 +15,8 @@ class Enemy
     {
         this.spriteWidth = enemyImageWidth;
         this.spritHeight = enemyImageHeight;
-        this.width = this.spriteWidth / 7;
-        this.height = this.spritHeight / 7;
+        this.width = this.spriteWidth / 3;
+        this.height = this.spritHeight / 3;
 
         this.x = Math.random() * (enemiesCanvas.width - this.width);
         this.y = Math.random() * (enemiesCanvas.height - this.height);
@@ -60,8 +63,8 @@ class SecondEnemy
     {
         this.spriteWidth = birdEnemyImageWidth;
         this.spritHeight = birdEnemyImageHeight;
-        this.width = this.spriteWidth / 7;
-        this.height = this.spritHeight / 7;
+        this.width = this.spriteWidth / 3;
+        this.height = this.spritHeight / 3;
 
         this.x = Math.random() * (enemiesCanvas.width - this.width);
         this.y = Math.random() * (enemiesCanvas.height - this.height);
