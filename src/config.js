@@ -31,7 +31,12 @@ export const ENEMY_HEIGHT = 20;
 export const ENEMY_CANVAS_WIDTH = 800;
 export const ENEMY_CANVAS_HEIGTH = 600;
 export const NUM_ENEMIES = 10;
-export const ENEMY_SPEED = 5;
+export const ENEMY_SPEED = 1;
+
+// - Enemies assets
+export const enemyImagePath = "../assets/enemies/enemy1.png"
+export const enemyImageWidth = 293;
+export const enemyImageHeight = 155;
 
 // ANIMATIONS
 // Define a json map that defines the possible animations with the number of frames required
