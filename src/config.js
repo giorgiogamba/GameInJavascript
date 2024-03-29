@@ -34,9 +34,16 @@ export const NUM_ENEMIES = 10;
 export const ENEMY_SPEED = 1;
 
 // - Enemies assets
-export const enemyImagePath = "../assets/enemies/enemy1.png"
+
+// -- Bat Enemy
+export const enemyImagePath = "../assets/enemies/enemy1.png";
 export const enemyImageWidth = 293;
 export const enemyImageHeight = 155;
+
+// -- Bird Enemy
+export const birdEnemyImagePath = "../assets/enemies/enemy2.png";
+export const birdEnemyImageWidth = 266;
+export const birdEnemyImageHeight = 188;
 
 // ANIMATIONS
 // Define a json map that defines the possible animations with the number of frames required
