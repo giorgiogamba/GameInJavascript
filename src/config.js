@@ -45,6 +45,11 @@ export const birdEnemyImagePath = "../assets/enemies/enemy2.png";
 export const birdEnemyImageWidth = 266;
 export const birdEnemyImageHeight = 188;
 
+// -- Squiddy Enemy
+export const squiddyEnemyImagePath = "../assets/enemies/enemy3.png";
+export const squiddyEnemyImageWidth = 218;
+export const squiddyEnemyImageHeight = 177;
+
 // ANIMATIONS
 // Define a json map that defines the possible animations with the number of frames required
 // to display them and their position inside the assete
